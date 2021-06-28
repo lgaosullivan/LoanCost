@@ -1,0 +1,34 @@
+﻿@model IEnumerable<LoanCost.Models.MonthlyPaybackPlan>
+
+@{
+    ViewData["Title"] = "Monthly Payback Plan";
+}
+
+<h2>Monthly Payback Plan</h2>
+
+<div>
+    <hr />
+
+    <table class="table table-bordered table-responsive table-hover">
+        <tr>
+
+            <th>@Html.DisplayNameFor(model => model.Amount) </th>
+            <th>@Html.DisplayNameFor(model => model.PaybackTime) </th>
+            <th>@Html.DisplayNameFor(model => model.InterestRate) </th>
+            <th>@Html.DisplayNameFor(model => model.InterestType)</th>
+            <th>@Html.DisplayNameFor(model => model.AmountToPayPerMonth)</th>
+            <th></th>
+        </tr>
+        @foreach (var d in Model)
+        {
+    <tr>
+        <td>@d.Amount</td>
+        <td>@d.PaybackTime</td>
+        <td>@d.InterestRate</td>
+        <td>@d.InterestType</td>
+        <td>@d.AmountToPayPerMonth</td>
+    </tr>
+    }
+    </table>
+</div>
+
