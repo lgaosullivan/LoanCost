@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using LoanCost.Services;
-using static LoanCost.Services.LoanType;
 
 namespace LoanCost.Models
 {
@@ -17,7 +12,7 @@ namespace LoanCost.Models
         public int PaybackTime { get; set; }
 
         [DisplayName("Interest Type")]
-        public LoanType.Interest InterestType { get; set; }
+        public string InterestType { get; set; }
 
         [DisplayName("Fixed interest during complete payback time")]
         public double InterestRate { get; set; }

@@ -19,8 +19,8 @@ namespace LoanCost.Services
             {
                 Amount = model.Amount,
                 PaybackTime = model.PaybackTime,
-                InterestType = LoanType.Interest.High,
-                InterestRate= Math.Round((double)LoanType.Interest.High, 2),
+                InterestType = "High",
+                InterestRate= Math.Round(LoanType.Interest.High, 2),
                 AmountToPayPerMonth = Math.Round(highInterestRate.CalculateLoan(), 2)
             });
 
@@ -28,8 +28,8 @@ namespace LoanCost.Services
             {
                 Amount = model.Amount,
                 PaybackTime = model.PaybackTime,
-                InterestType = LoanType.Interest.Medium,
-                InterestRate = Math.Round((double)LoanType.Interest.Medium, 2),
+                InterestType = "Medium",
+                InterestRate = Math.Round(LoanType.Interest.Medium, 2),
                 AmountToPayPerMonth = Math.Round(mediumInterestRate.CalculateLoan(), 2)
             });
 
@@ -37,8 +37,8 @@ namespace LoanCost.Services
             {
                 Amount = model.Amount,
                 PaybackTime = model.PaybackTime,
-                InterestType = LoanType.Interest.Low,
-                InterestRate = Math.Round((double)LoanType.Interest.Low, 2),
+                InterestType = "Low",
+                InterestRate = Math.Round(LoanType.Interest.Low, 2),
                 AmountToPayPerMonth = Math.Round(lowInterestRate.CalculateLoan(), 2)
             });
 
@@ -97,11 +97,11 @@ namespace LoanCost.Services
     {
         //The interest should be connected to the loan type in such a manner
         //that different loan types can have different interests
-        public enum Interest
+        public struct Interest
         {
-            High = 10,
-            Medium = 5,
-            Low = (int)3.5
+            public const double High = 10;
+            public const double Medium = 5;
+            public const double Low = 3.5;
         }
     }
 }
